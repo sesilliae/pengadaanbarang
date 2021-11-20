@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2020 at 08:44 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Nov 20, 2021 at 04:14 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,7 +40,7 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`id`, `contents`, `admin`, `status`) VALUES
-(21, 'Disini bisa tulis notes', 'Stock', 'aktif');
+(23, 'Minggu, 3 Januari 2021. Masuk stock berupa bandeng, cumi-cumi, dan belanak.', 'Stock', 'aktif');
 
 -- --------------------------------------------------------
 
@@ -62,7 +62,8 @@ CREATE TABLE `sbrg_keluar` (
 --
 
 INSERT INTO `sbrg_keluar` (`id`, `idx`, `tgl`, `jumlah`, `penerima`, `keterangan`) VALUES
-(15, 244, '2020-08-29', 1000, 'Kasmina', 'Laku');
+(16, 1, '2021-01-03', 20, 'Pak Aziz', 'Laku'),
+(17, 4, '2021-01-03', 40, 'Pak Budi', 'Laku');
 
 -- --------------------------------------------------------
 
@@ -83,7 +84,12 @@ CREATE TABLE `sbrg_masuk` (
 --
 
 INSERT INTO `sbrg_masuk` (`id`, `idx`, `tgl`, `jumlah`, `keterangan`) VALUES
-(9, 244, '2020-08-07', 600, 'kk');
+(15, 4, '2021-01-03', 50, ''),
+(13, 1, '2021-01-02', 50, ''),
+(14, 1, '2021-01-03', 30, ''),
+(16, 3, '0000-00-00', 70, ''),
+(17, 2, '2021-01-03', 100, ''),
+(18, 3, '2021-01-01', 30, '');
 
 -- --------------------------------------------------------
 
@@ -104,7 +110,13 @@ CREATE TABLE `slogin` (
 --
 
 INSERT INTO `slogin` (`id`, `username`, `password`, `nickname`, `role`) VALUES
-(7, 'guest', '084e0343a0486ff05530df6c705c8bb4', 'Stock', 'stock');
+(7, 'guest', '084e0343a0486ff05530df6c705c8bb4', 'Stock', 'stock'),
+(13, 'pardip', 'pardip', 'pardip', 'admin'),
+(15, 'alfita', 'alfita', 'alfita', 'admin'),
+(16, 'fikry', 'fikry', 'fikry', 'admin'),
+(17, 'sesil', 'sesil', 'sesil', 'admin'),
+(18, 'sesillia', 'sesillia', 'sesillia', 'admin'),
+(19, 'admin', 'admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -128,8 +140,10 @@ CREATE TABLE `sstock_brg` (
 --
 
 INSERT INTO `sstock_brg` (`idx`, `nama`, `jenis`, `merk`, `ukuran`, `stock`, `satuan`, `lokasi`) VALUES
-(243, 'Mata Bor', 'Flame', 'Garryson', '50', 2992, 'Buah', 'PT Willtec'),
-(244, 'Mata Bor', 'Ball Nosed Cone', 'Garryson', '17', 1000, 'Unit', 'PT Wiltec');
+(2, 'Belanak', 'Ikan', '-', '-', 200, 'kg', 'TPI Lontar'),
+(1, 'Bandeng', 'Ikan', '-', '-', 160, 'kg', 'TPI Lontar'),
+(3, 'Udang', 'Udang', '-', '-', 200, 'kg', 'TPI Lontar'),
+(4, 'Cumi-cumi', 'Cumi-cumi', '-', '-', 60, 'kg', 'TPI Lontar');
 
 --
 -- Indexes for dumped tables
@@ -173,25 +187,25 @@ ALTER TABLE `sstock_brg`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `sbrg_keluar`
 --
 ALTER TABLE `sbrg_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `sbrg_masuk`
 --
 ALTER TABLE `sbrg_masuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `slogin`
 --
 ALTER TABLE `slogin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `sstock_brg`
